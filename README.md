@@ -16,7 +16,7 @@ Asynchronous logging is provided high volume low latency situations where occasi
 <h2>Configuring the logger</h2>
 
 The definition of the default logging setup is shown below:
-<code>
+<code><pre>
   [
      {writers,
         [
@@ -29,9 +29,9 @@ The definition of the default logging setup is shown below:
 	       {error,default,sync}
        ]}
   ]
-  </code>
+  </pre></code>
   In this configuration there is one writer that writes the file log/default.log.  Logging levels are debug, info and error.  Errors are logged synchronously.  These are application environment variables and can be set either in the .app file, or preferably in a tonys_logger.config file.  Let us redefine the setup to ignore debug messages.  Currently it is an error to not have a writer associated with a debug level.  The easy way to throw away data is to log it to /dev/null.  This is done by adding the new writer and pointing debug to it:
-  <code>
+  <code><pre>
   [
      {writers,
         [
@@ -45,7 +45,7 @@ The definition of the default logging setup is shown below:
 	       {error,default,sync}
        ]}
   ]
-  </code>
+  </pre></code>
   <h2>Using the logger</h2>
   
   Logging is done with the call:
