@@ -1,0 +1,17 @@
+{application, tonys_logger,
+ [
+  {mod,{tonys_logger_app,[]}},
+  {env,
+  [
+     {writers,
+        [
+          {default,"log/default.log"}
+        ]},
+     {levels, 
+       [
+         {debug,default,nosync},
+	 {info, default,nosync},
+	 {error,default,sync}
+       ]}
+  ]}
+]}.
